@@ -1,0 +1,71 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fbe6e6;
+    color: #e6007e;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+header h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+main {
+    background-color: #fff0f6;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.message p {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.emoji p {
+    font-size: 2em;
+    margin-top: 20px;
+}
+
+.button-section {
+    margin-top: 30px;
+}
+
+.be-mine-btn {
+    font-size: 1.5em;
+    padding: 15px 40px;
+    background-color: #e6007e;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.be-mine-btn:hover {
+    background-color: #ff3366;
+    transform: scale(1.1);
+}
+
+footer {
+    margin-top: 40px;
+    font-size: 1em;
+    color: #e6007e;
+}
+
+footer p {
+    font-style: italic;
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+
+
+        <style>
+            body {
+                text-align: center;
+                font-family: Arial, sans-serif;
+                background-color: #fbe6e6;
+                color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                flex-direction: column;
+            }
+    
+            .attack-btn {
+                padding: 14px 28px;
+                font-size: 20px;
+                font-weight: bold;
+                background-color: #ff1e56;
+                color: white;
+                border: none;
+                border-radius: 10px;
+                cursor: pointer;
+                transition: 0.3s;
+            }
+    
+            .emoji {
+                position: absolute;
+                font-size: 30px;
+                pointer-events: none;
+                opacity: 1;
+                animation: explode 3s ease-out forwards;
+            }
+    
+            @keyframes explode {
+                0% {
+                    transform: scale(1) translate(0, 0);
+                    opacity: 1;
+                }
+                100% {
+                    transform: scale(3) translate(calc(200px - 400px * var(--x)), calc(200px - 400px * var(--y)));
+                    opacity: 0;
+                }
+            }
+        </style>
+    </head>
+    <body>
+    
+        <button class="attack-btn" onclick="emojiAttack(event)">💥 Unisha click me 💥</button>
+    
+        <script>
+            function emojiAttack(event) {
+                const emojis = ["❤️", "😘", "💋", "💕", "😍", "💖", "🔥", "🌟" ,"I love you Kanchu"];
+                const numEmojis = 1000; // 1000 emojis per click
+                const buttonRect = event.target.getBoundingClientRect();
+                const buttonX = buttonRect.left + buttonRect.width / 2;
+                const buttonY = buttonRect.top + buttonRect.height / 2;
+    
+                for (let i = 0; i < numEmojis; i++) {
+                    setTimeout(() => {
+                        const emoji = document.createElement("div");
+                        emoji.classList.add("emoji");
+                        emoji.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+                        document.body.appendChild(emoji);
+    
+                        // Set random explosion direction
+                        emoji.style.setProperty('--x', Math.random() * 2 - 1);
+                        emoji.style.setProperty('--y', Math.random() * 2 - 1);
+    
+                        // Position at button click
+                        emoji.style.left = `${buttonX}px`;
+                        emoji.style.top = `${buttonY}px`;
+    
+                        // Remove emoji after animation
+                        setTimeout(() => emoji.remove(), 3000);
+                    }, i * 2); // Staggered release for better effect
+                }
+            }
+        </script>
+    
+    </body>
+    </html>
+    
+</body>
+</html>
